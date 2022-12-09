@@ -1,7 +1,8 @@
 image: docker:stable
 
 services:
-  - docker:dind
+  - name: docker:dind
+    command: ["--insecure-registry=$CI_REGISTRY"]
 
 stages:
   - build
