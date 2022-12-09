@@ -9,7 +9,7 @@ stages:
   - deploy
 
 variables:
-  IMAGE_NAME: lhysin/sample-express
+  IMAGE_NAME: ${CI_REGISTRY}/sample-express
   VERSION: v1.0.0
   CONTAINER_NAME: sample-express
 
