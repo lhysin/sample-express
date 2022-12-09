@@ -33,5 +33,4 @@ deploy:
     -  oci-arm4c-runner-tag
   script:
     - docker container ls -a
-    - docker container rm -f $CONTAINER_NAME || true docker run -d -p 8900:8900 --name $CONTAINER_NAME --restart always $IMAGE_NAME || false docker run -d -p 8900:8900 --name $CONTAINER_NAME --restart always $IMAGE_NAME
-    - docker container ls -a
+    - docker container rm -f $CONTAINER_NAME || docker run -d -p 8900:8900 --name $CONTAINER_NAME --restart always $IMAGE_NAME
