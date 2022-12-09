@@ -10,7 +10,6 @@ stages:
 
 variables:
   IMAGE_NAME: ${CI_REGISTRY}/sample-express
-  VERSION: v1.0.0
   CONTAINER_NAME: sample-express
 
 cache:
@@ -27,7 +26,7 @@ build:
     - docker container ls -a
     - docker build . -t $IMAGE_NAME:latest
     - docker push $IMAGE_NAME:latest
-    - docker image prune
+    - docker image prune -f
 
 deploy:
   stage: deploy
